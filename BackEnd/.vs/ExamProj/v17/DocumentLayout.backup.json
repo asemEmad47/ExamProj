@@ -1,0 +1,122 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\aseme\\Desktop\\WebApplication1\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{B59C9913-04F1-4F58-8CEB-3EBCEFC073CE}|WebApplication1\\ExamProj.csproj|c:\\users\\aseme\\desktop\\webapplication1\\webapplication1\\repos\\examrepo\\examrepo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B59C9913-04F1-4F58-8CEB-3EBCEFC073CE}|WebApplication1\\ExamProj.csproj|solutionrelative:webapplication1\\repos\\examrepo\\examrepo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B59C9913-04F1-4F58-8CEB-3EBCEFC073CE}|WebApplication1\\ExamProj.csproj|c:\\users\\aseme\\desktop\\webapplication1\\webapplication1\\models\\exammodel\\question.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B59C9913-04F1-4F58-8CEB-3EBCEFC073CE}|WebApplication1\\ExamProj.csproj|solutionrelative:webapplication1\\models\\exammodel\\question.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B59C9913-04F1-4F58-8CEB-3EBCEFC073CE}|WebApplication1\\ExamProj.csproj|c:\\users\\aseme\\desktop\\webapplication1\\webapplication1\\context\\context.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B59C9913-04F1-4F58-8CEB-3EBCEFC073CE}|WebApplication1\\ExamProj.csproj|solutionrelative:webapplication1\\context\\context.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B59C9913-04F1-4F58-8CEB-3EBCEFC073CE}|WebApplication1\\ExamProj.csproj|c:\\users\\aseme\\desktop\\webapplication1\\webapplication1\\models\\exammodel\\answer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B59C9913-04F1-4F58-8CEB-3EBCEFC073CE}|WebApplication1\\ExamProj.csproj|solutionrelative:webapplication1\\models\\exammodel\\answer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B59C9913-04F1-4F58-8CEB-3EBCEFC073CE}|WebApplication1\\ExamProj.csproj|c:\\users\\aseme\\desktop\\webapplication1\\webapplication1\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B59C9913-04F1-4F58-8CEB-3EBCEFC073CE}|WebApplication1\\ExamProj.csproj|solutionrelative:webapplication1\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B59C9913-04F1-4F58-8CEB-3EBCEFC073CE}|WebApplication1\\ExamProj.csproj|c:\\users\\aseme\\desktop\\webapplication1\\webapplication1\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{B59C9913-04F1-4F58-8CEB-3EBCEFC073CE}|WebApplication1\\ExamProj.csproj|solutionrelative:webapplication1\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "ExamRepo.cs",
+              "DocumentMoniker": "C:\\Users\\aseme\\Desktop\\WebApplication1\\WebApplication1\\Repos\\ExamRepo\\ExamRepo.cs",
+              "RelativeDocumentMoniker": "WebApplication1\\Repos\\ExamRepo\\ExamRepo.cs",
+              "ToolTip": "C:\\Users\\aseme\\Desktop\\WebApplication1\\WebApplication1\\Repos\\ExamRepo\\ExamRepo.cs",
+              "RelativeToolTip": "WebApplication1\\Repos\\ExamRepo\\ExamRepo.cs",
+              "ViewState": "AgIAADQAAAAAAAAAAAAQwCsAAAA0AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-14T13:07:42.164Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Answer.cs",
+              "DocumentMoniker": "C:\\Users\\aseme\\Desktop\\WebApplication1\\WebApplication1\\Models\\ExamModel\\Answer.cs",
+              "RelativeDocumentMoniker": "WebApplication1\\Models\\ExamModel\\Answer.cs",
+              "ToolTip": "C:\\Users\\aseme\\Desktop\\WebApplication1\\WebApplication1\\Models\\ExamModel\\Answer.cs",
+              "RelativeToolTip": "WebApplication1\\Models\\ExamModel\\Answer.cs",
+              "ViewState": "AgIAAAUAAAAAAAAAAAAxwBEAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-14T13:01:38.023Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Question.cs",
+              "DocumentMoniker": "C:\\Users\\aseme\\Desktop\\WebApplication1\\WebApplication1\\Models\\ExamModel\\Question.cs",
+              "RelativeDocumentMoniker": "WebApplication1\\Models\\ExamModel\\Question.cs",
+              "ToolTip": "C:\\Users\\aseme\\Desktop\\WebApplication1\\WebApplication1\\Models\\ExamModel\\Question.cs",
+              "RelativeToolTip": "WebApplication1\\Models\\ExamModel\\Question.cs",
+              "ViewState": "AgIAAAgAAAAAAAAAAAAqwBoAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-14T13:01:23.941Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Context.cs",
+              "DocumentMoniker": "C:\\Users\\aseme\\Desktop\\WebApplication1\\WebApplication1\\Context\\Context.cs",
+              "RelativeDocumentMoniker": "WebApplication1\\Context\\Context.cs",
+              "ToolTip": "C:\\Users\\aseme\\Desktop\\WebApplication1\\WebApplication1\\Context\\Context.cs",
+              "RelativeToolTip": "WebApplication1\\Context\\Context.cs",
+              "ViewState": "AgIAABgAAAAAAAAAAAAYwCQAAAAnAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-14T13:00:22.366Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\aseme\\Desktop\\WebApplication1\\WebApplication1\\Program.cs",
+              "RelativeDocumentMoniker": "WebApplication1\\Program.cs",
+              "ToolTip": "C:\\Users\\aseme\\Desktop\\WebApplication1\\WebApplication1\\Program.cs",
+              "RelativeToolTip": "WebApplication1\\Program.cs",
+              "ViewState": "AgIAACcAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-14T12:50:00.391Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\Users\\aseme\\Desktop\\WebApplication1\\WebApplication1\\appsettings.json",
+              "RelativeDocumentMoniker": "WebApplication1\\appsettings.json",
+              "ToolTip": "C:\\Users\\aseme\\Desktop\\WebApplication1\\WebApplication1\\appsettings.json",
+              "RelativeToolTip": "WebApplication1\\appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-03-14T12:49:23.924Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
