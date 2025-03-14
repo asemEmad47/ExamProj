@@ -19,13 +19,13 @@ namespace WebApplication1.Models.UserModels
         public string UserName { get; set; }
 
         [Required]
-        [Column(TypeName = "varchar(25)")]
+        [Column(TypeName = "varchar(90)")]
         public string Password { get; set; }
 
         [Column(TypeName = "varchar(255)")]
-        public string RefreshToken { get; set; }
+        public string? RefreshToken { get; set; }
 
-        public DateTime RefreshTokenExpiryTime { get; set; }
+        public DateTime? RefreshTokenExpiryTime { get; set; }
         public Role Role { get; set; }
     }
 }

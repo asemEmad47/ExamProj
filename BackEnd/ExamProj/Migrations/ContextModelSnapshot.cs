@@ -137,13 +137,12 @@ namespace ExamProj.Migrations
 
                     b.Property<string>("Password")
                         .IsRequired()
-                        .HasColumnType("varchar(25)");
+                        .HasColumnType("varchar(90)");
 
                     b.Property<string>("RefreshToken")
-                        .IsRequired()
                         .HasColumnType("varchar(255)");
 
-                    b.Property<DateTime>("RefreshTokenExpiryTime")
+                    b.Property<DateTime?>("RefreshTokenExpiryTime")
                         .HasColumnType("datetime2");
 
                     b.Property<string>("Role")
@@ -157,6 +156,16 @@ namespace ExamProj.Migrations
                     b.HasKey("UserId");
 
                     b.ToTable("User", "Users");
+
+                    b.HasData(
+                        new
+                        {
+                            UserId = 1,
+                            Email = "asememad984@gmail.com",
+                            Password = "AQAAAAIAAYagAAAAEDlrL6MkkpZYVKNrABq3VrejgMfdxq9AMeR1iz55Dw4GwYdudj+jKaPpok/9G/Ld8g==",
+                            Role = "SuperAdmin",
+                            UserName = "Asem emad"
+                        });
                 });
 
             modelBuilder.Entity("ExamProj.Models.ExamModel.UserHistory", b =>

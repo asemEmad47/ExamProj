@@ -37,8 +37,18 @@ namespace WebApplication1.Context
                 .HasMany(q => q.Answers)
                 .WithOne()
                 .HasForeignKey(a => a.QuestionId)
-                .OnDelete(DeleteBehavior.Cascade); 
+                .OnDelete(DeleteBehavior.Cascade);
 
+            var SuperAdmin = new User()
+            {
+                UserId = 1,
+                UserName = "Asem emad",
+                Password = "AQAAAAIAAYagAAAAEDlrL6MkkpZYVKNrABq3VrejgMfdxq9AMeR1iz55Dw4GwYdudj+jKaPpok/9G/Ld8g==",
+                Email = "asememad984@gmail.com",
+                Role = Role.SuperAdmin
+            };
+
+            modelBuilder.Entity<User>().HasData(SuperAdmin);
         }
     }
 }

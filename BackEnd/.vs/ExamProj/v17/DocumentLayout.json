@@ -1,46 +1,22 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\aseme\\Desktop\\WebApplication1\\",
+  "WorkspaceRootPath": "D:\\DPartion\\AliShahinTask\\ExamProj\\BackEnd\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{B59C9913-04F1-4F58-8CEB-3EBCEFC073CE}|WebApplication1\\ExamProj.csproj|c:\\users\\aseme\\desktop\\webapplication1\\webapplication1\\models\\exammodel\\exam.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B59C9913-04F1-4F58-8CEB-3EBCEFC073CE}|WebApplication1\\ExamProj.csproj|solutionrelative:webapplication1\\models\\exammodel\\exam.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{B59C9913-04F1-4F58-8CEB-3EBCEFC073CE}|ExamProj\\ExamProj.csproj|d:\\dpartion\\alishahintask\\examproj\\backend\\examproj\\models\\usermodels\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B59C9913-04F1-4F58-8CEB-3EBCEFC073CE}|ExamProj\\ExamProj.csproj|solutionrelative:examproj\\models\\usermodels\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{B59C9913-04F1-4F58-8CEB-3EBCEFC073CE}|WebApplication1\\ExamProj.csproj|c:\\users\\aseme\\desktop\\webapplication1\\webapplication1\\models\\exammodel\\userhistory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B59C9913-04F1-4F58-8CEB-3EBCEFC073CE}|WebApplication1\\ExamProj.csproj|solutionrelative:webapplication1\\models\\exammodel\\userhistory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{B59C9913-04F1-4F58-8CEB-3EBCEFC073CE}|ExamProj\\ExamProj.csproj|d:\\dpartion\\alishahintask\\examproj\\backend\\examproj\\context\\context.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B59C9913-04F1-4F58-8CEB-3EBCEFC073CE}|ExamProj\\ExamProj.csproj|solutionrelative:examproj\\context\\context.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{B59C9913-04F1-4F58-8CEB-3EBCEFC073CE}|WebApplication1\\ExamProj.csproj|c:\\users\\aseme\\desktop\\webapplication1\\webapplication1\\models\\usermodels\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B59C9913-04F1-4F58-8CEB-3EBCEFC073CE}|WebApplication1\\ExamProj.csproj|solutionrelative:webapplication1\\models\\usermodels\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{B59C9913-04F1-4F58-8CEB-3EBCEFC073CE}|ExamProj\\ExamProj.csproj|d:\\dpartion\\alishahintask\\examproj\\backend\\examproj\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{B59C9913-04F1-4F58-8CEB-3EBCEFC073CE}|ExamProj\\ExamProj.csproj|solutionrelative:examproj\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{B59C9913-04F1-4F58-8CEB-3EBCEFC073CE}|WebApplication1\\ExamProj.csproj|c:\\users\\aseme\\desktop\\webapplication1\\webapplication1\\services\\validationservices\\fieldsvalidator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B59C9913-04F1-4F58-8CEB-3EBCEFC073CE}|WebApplication1\\ExamProj.csproj|solutionrelative:webapplication1\\services\\validationservices\\fieldsvalidator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B59C9913-04F1-4F58-8CEB-3EBCEFC073CE}|WebApplication1\\ExamProj.csproj|c:\\users\\aseme\\desktop\\webapplication1\\webapplication1\\repos\\examrepo\\examrepo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B59C9913-04F1-4F58-8CEB-3EBCEFC073CE}|WebApplication1\\ExamProj.csproj|solutionrelative:webapplication1\\repos\\examrepo\\examrepo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B59C9913-04F1-4F58-8CEB-3EBCEFC073CE}|WebApplication1\\ExamProj.csproj|c:\\users\\aseme\\desktop\\webapplication1\\webapplication1\\models\\exammodel\\question.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B59C9913-04F1-4F58-8CEB-3EBCEFC073CE}|WebApplication1\\ExamProj.csproj|solutionrelative:webapplication1\\models\\exammodel\\question.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B59C9913-04F1-4F58-8CEB-3EBCEFC073CE}|WebApplication1\\ExamProj.csproj|c:\\users\\aseme\\desktop\\webapplication1\\webapplication1\\context\\context.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B59C9913-04F1-4F58-8CEB-3EBCEFC073CE}|WebApplication1\\ExamProj.csproj|solutionrelative:webapplication1\\context\\context.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B59C9913-04F1-4F58-8CEB-3EBCEFC073CE}|WebApplication1\\ExamProj.csproj|c:\\users\\aseme\\desktop\\webapplication1\\webapplication1\\models\\exammodel\\answer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B59C9913-04F1-4F58-8CEB-3EBCEFC073CE}|WebApplication1\\ExamProj.csproj|solutionrelative:webapplication1\\models\\exammodel\\answer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B59C9913-04F1-4F58-8CEB-3EBCEFC073CE}|WebApplication1\\ExamProj.csproj|c:\\users\\aseme\\desktop\\webapplication1\\webapplication1\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B59C9913-04F1-4F58-8CEB-3EBCEFC073CE}|WebApplication1\\ExamProj.csproj|solutionrelative:webapplication1\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B59C9913-04F1-4F58-8CEB-3EBCEFC073CE}|WebApplication1\\ExamProj.csproj|c:\\users\\aseme\\desktop\\webapplication1\\webapplication1\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{B59C9913-04F1-4F58-8CEB-3EBCEFC073CE}|WebApplication1\\ExamProj.csproj|solutionrelative:webapplication1\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+      "AbsoluteMoniker": "D:0:0:{B59C9913-04F1-4F58-8CEB-3EBCEFC073CE}|ExamProj\\ExamProj.csproj|d:\\dpartion\\alishahintask\\examproj\\backend\\examproj\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B59C9913-04F1-4F58-8CEB-3EBCEFC073CE}|ExamProj\\ExamProj.csproj|solutionrelative:examproj\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -50,136 +26,58 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "UserHistory.cs",
-              "DocumentMoniker": "C:\\Users\\aseme\\Desktop\\WebApplication1\\WebApplication1\\Models\\ExamModel\\UserHistory.cs",
-              "RelativeDocumentMoniker": "WebApplication1\\Models\\ExamModel\\UserHistory.cs",
-              "ToolTip": "C:\\Users\\aseme\\Desktop\\WebApplication1\\WebApplication1\\Models\\ExamModel\\UserHistory.cs",
-              "RelativeToolTip": "WebApplication1\\Models\\ExamModel\\UserHistory.cs",
-              "ViewState": "AgIAAA4AAAAAAAAAAAA3wBwAAAATAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-14T13:24:20.115Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "Exam.cs",
-              "DocumentMoniker": "C:\\Users\\aseme\\Desktop\\WebApplication1\\WebApplication1\\Models\\ExamModel\\Exam.cs",
-              "RelativeDocumentMoniker": "WebApplication1\\Models\\ExamModel\\Exam.cs",
-              "ToolTip": "C:\\Users\\aseme\\Desktop\\WebApplication1\\WebApplication1\\Models\\ExamModel\\Exam.cs",
-              "RelativeToolTip": "WebApplication1\\Models\\ExamModel\\Exam.cs",
-              "ViewState": "AgIAAAoAAAAAAAAAAAAzwBQAAAAUAAAAAAAAAA==",
+              "Title": "User.cs",
+              "DocumentMoniker": "D:\\DPartion\\AliShahinTask\\ExamProj\\BackEnd\\ExamProj\\Models\\UserModels\\User.cs",
+              "RelativeDocumentMoniker": "ExamProj\\Models\\UserModels\\User.cs",
+              "ToolTip": "D:\\DPartion\\AliShahinTask\\ExamProj\\BackEnd\\ExamProj\\Models\\UserModels\\User.cs",
+              "RelativeToolTip": "ExamProj\\Models\\UserModels\\User.cs",
+              "ViewState": "AgIAAA0AAAAAAAAAAAAqwBsAAAAYAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-14T13:22:29.72Z",
+              "WhenOpened": "2025-03-14T14:45:58.849Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "User.cs",
-              "DocumentMoniker": "C:\\Users\\aseme\\Desktop\\WebApplication1\\WebApplication1\\Models\\UserModels\\User.cs",
-              "RelativeDocumentMoniker": "WebApplication1\\Models\\UserModels\\User.cs",
-              "ToolTip": "C:\\Users\\aseme\\Desktop\\WebApplication1\\WebApplication1\\Models\\UserModels\\User.cs",
-              "RelativeToolTip": "WebApplication1\\Models\\UserModels\\User.cs",
-              "ViewState": "AgIAAAYAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "DocumentIndex": 1,
+              "Title": "Context.cs",
+              "DocumentMoniker": "D:\\DPartion\\AliShahinTask\\ExamProj\\BackEnd\\ExamProj\\Context\\Context.cs",
+              "RelativeDocumentMoniker": "ExamProj\\Context\\Context.cs",
+              "ToolTip": "D:\\DPartion\\AliShahinTask\\ExamProj\\BackEnd\\ExamProj\\Context\\Context.cs",
+              "RelativeToolTip": "ExamProj\\Context\\Context.cs",
+              "ViewState": "AgIAAB4AAAAAAAAAAAAgwCkAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-14T13:22:12.849Z",
+              "WhenOpened": "2025-03-14T14:42:02.563Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 3,
-              "Title": "FieldsValidator.cs",
-              "DocumentMoniker": "C:\\Users\\aseme\\Desktop\\WebApplication1\\WebApplication1\\Services\\ValidationServices\\FieldsValidator.cs",
-              "RelativeDocumentMoniker": "WebApplication1\\Services\\ValidationServices\\FieldsValidator.cs",
-              "ToolTip": "C:\\Users\\aseme\\Desktop\\WebApplication1\\WebApplication1\\Services\\ValidationServices\\FieldsValidator.cs",
-              "RelativeToolTip": "WebApplication1\\Services\\ValidationServices\\FieldsValidator.cs",
-              "ViewState": "AgIAAAYAAAAAAAAAAAAAwBoAAAA1AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-14T13:18:20.425Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "ExamRepo.cs",
-              "DocumentMoniker": "C:\\Users\\aseme\\Desktop\\WebApplication1\\WebApplication1\\Repos\\ExamRepo\\ExamRepo.cs",
-              "RelativeDocumentMoniker": "WebApplication1\\Repos\\ExamRepo\\ExamRepo.cs",
-              "ToolTip": "C:\\Users\\aseme\\Desktop\\WebApplication1\\WebApplication1\\Repos\\ExamRepo\\ExamRepo.cs",
-              "RelativeToolTip": "WebApplication1\\Repos\\ExamRepo\\ExamRepo.cs",
-              "ViewState": "AgIAADQAAAAAAAAAAAAQwCsAAAA0AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-14T13:07:42.164Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "Answer.cs",
-              "DocumentMoniker": "C:\\Users\\aseme\\Desktop\\WebApplication1\\WebApplication1\\Models\\ExamModel\\Answer.cs",
-              "RelativeDocumentMoniker": "WebApplication1\\Models\\ExamModel\\Answer.cs",
-              "ToolTip": "C:\\Users\\aseme\\Desktop\\WebApplication1\\WebApplication1\\Models\\ExamModel\\Answer.cs",
-              "RelativeToolTip": "WebApplication1\\Models\\ExamModel\\Answer.cs",
-              "ViewState": "AgIAAAUAAAAAAAAAAAAxwBEAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-14T13:01:38.023Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "Question.cs",
-              "DocumentMoniker": "C:\\Users\\aseme\\Desktop\\WebApplication1\\WebApplication1\\Models\\ExamModel\\Question.cs",
-              "RelativeDocumentMoniker": "WebApplication1\\Models\\ExamModel\\Question.cs",
-              "ToolTip": "C:\\Users\\aseme\\Desktop\\WebApplication1\\WebApplication1\\Models\\ExamModel\\Question.cs",
-              "RelativeToolTip": "WebApplication1\\Models\\ExamModel\\Question.cs",
-              "ViewState": "AgIAAAgAAAAAAAAAAAAqwBoAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-14T13:01:23.941Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "Context.cs",
-              "DocumentMoniker": "C:\\Users\\aseme\\Desktop\\WebApplication1\\WebApplication1\\Context\\Context.cs",
-              "RelativeDocumentMoniker": "WebApplication1\\Context\\Context.cs",
-              "ToolTip": "C:\\Users\\aseme\\Desktop\\WebApplication1\\WebApplication1\\Context\\Context.cs",
-              "RelativeToolTip": "WebApplication1\\Context\\Context.cs",
-              "ViewState": "AgIAABgAAAAAAAAAAAAYwCQAAAAnAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-14T13:00:22.366Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
               "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\aseme\\Desktop\\WebApplication1\\WebApplication1\\Program.cs",
-              "RelativeDocumentMoniker": "WebApplication1\\Program.cs",
-              "ToolTip": "C:\\Users\\aseme\\Desktop\\WebApplication1\\WebApplication1\\Program.cs",
-              "RelativeToolTip": "WebApplication1\\Program.cs",
-              "ViewState": "AgIAACcAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "DocumentMoniker": "D:\\DPartion\\AliShahinTask\\ExamProj\\BackEnd\\ExamProj\\Program.cs",
+              "RelativeDocumentMoniker": "ExamProj\\Program.cs",
+              "ToolTip": "D:\\DPartion\\AliShahinTask\\ExamProj\\BackEnd\\ExamProj\\Program.cs",
+              "RelativeToolTip": "ExamProj\\Program.cs",
+              "ViewState": "AgIAACoAAAAAAAAAAAAAACIAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-14T12:50:00.391Z",
+              "WhenOpened": "2025-03-14T14:16:15.929Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 2,
               "Title": "appsettings.json",
-              "DocumentMoniker": "C:\\Users\\aseme\\Desktop\\WebApplication1\\WebApplication1\\appsettings.json",
-              "RelativeDocumentMoniker": "WebApplication1\\appsettings.json",
-              "ToolTip": "C:\\Users\\aseme\\Desktop\\WebApplication1\\WebApplication1\\appsettings.json",
-              "RelativeToolTip": "WebApplication1\\appsettings.json",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAA==",
+              "DocumentMoniker": "D:\\DPartion\\AliShahinTask\\ExamProj\\BackEnd\\ExamProj\\appsettings.json",
+              "RelativeDocumentMoniker": "ExamProj\\appsettings.json",
+              "ToolTip": "D:\\DPartion\\AliShahinTask\\ExamProj\\BackEnd\\ExamProj\\appsettings.json",
+              "RelativeToolTip": "ExamProj\\appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2025-03-14T12:49:23.924Z",
+              "WhenOpened": "2025-03-14T14:16:07.112Z",
               "EditorCaption": ""
             }
           ]
