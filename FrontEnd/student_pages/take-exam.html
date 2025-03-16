@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Take Exam</title>
+    <script src="../auth.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #f8f9fa;
+        }
+        .exam-container {
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        h2 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .question-block {
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+            <span class="navbar-brand mb-0 h1">Exam System</span>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="user-exams.html">Your exams history</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="take-exam.html">Available Exams</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    
+<div class="exam-container">
+    <h2>Available Exams</h2>
+    <div id="examList" class="mb-4"></div>
+    <div id="examContainer" style="display:none;">
+        <h2 id="examTitle">Exam</h2>
+        <form id="examForm">
+            <div id="questionsContainer"></div>
+            <button type="submit" class="btn btn-success">Submit Exam</button>
+        </form>
+    </div>
+    <div id="resultSection" class="mt-4"></div>
+</div>
+
+<script>
+    let currentExamId = null;
+    let currentExamData = null;
+
+    // Load all available exams
+    async function loadExams() {
+        try {
+            const data = await apiCall("https://localhost:7216/api/Exam/GetAllExams");
+            const examList = document.getElementById("examList");
+            examList.innerHTML = data.map(exam => `
+                <div class="d-flex justify-content-between align-items-center mb-2">
+                    <span class="flex-grow-1">${exam.examTitle}</span>
+                    <button class="btn btn-primary btn-sm ms-2" onclick="startExam(${exam.examId})">Start Exam</button>
+                </div>
+            `).join("");
+        } catch (error) {
+            console.error("Error loading exams:", error);
+        }
+    }
+    
+    function shuffleArray(array) {
+        for (let i = array.length - 1; i > 0; i--) {
+            const j = Math.floor(Math.random() * (i + 1));
+            [array[i], array[j]] = [array[j], array[i]];
+        }
+        return array;
+    }
+
+    
+    // Start an exam and display questions
+    function startExam(examId) {
+        apiCall(`https://localhost:7216/api/Exam/GetExam/${examId}`)
+            .then(data => {
+                currentExamId = examId;
+                currentExamData = data;
+                document.getElementById("examTitle").innerText = data.examTitle;
+                const questionsContainer = document.getElementById("questionsContainer");
+                questionsContainer.innerHTML = data.questions.map((question, index) => `
+                    <div class="question-block">
+                        <h5>Question ${index + 1}: ${question.questionTitle} (Weight: ${question.questionWeight})</h5>
+                        ${question.answers.map(answer => `
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" 
+                                    name="question${question.questionId}" 
+                                    value="${answer.answerId}|${answer.answerTxt}" 
+                                    required>
+                                <label class="form-check-label">${answer.answerTxt}</label>
+                            </div>
+                        `).join("")}
+                    </div>
+                `).join("");
+                document.getElementById("examContainer").style.display = "block";
+            })
+            .catch(error => console.error("Error loading exam:", error));
+    }
+    
+
+    // Handle exam submission
+    document.getElementById("examForm").addEventListener("submit", function(e) {
+        e.preventDefault();
+        const formData = new FormData(e.target);
+        const questions = [];
+
+        for (const [key, value] of formData.entries()) {
+            const questionId = parseInt(key.replace("question", ""));
+            const [answerId, answerTxt] = value.split("|");
+            const questionData = currentExamData.questions.find(q => q.questionId === questionId);
+
+            questions.push({
+                questionId: questionId,
+                questionTitle: questionData.questionTitle,
+                questionWeight: questionData.questionWeight,
+                answers: [
+                    {
+                        answerId: parseInt(answerId),
+                        answerTxt: answerTxt
+                    }
+                ]
+            });
+        }
+
+        const exam = {
+            ExamId: currentExamId,
+            ExamTitle: document.getElementById("examTitle").innerText,
+            Questions: questions
+        };
+        fetch("https://localhost:7216/api/Exam/CorrectUserAnswers", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+                "Authorization": "Bearer " + localStorage.getItem("accessToken")
+            },
+            body: JSON.stringify(exam)
+        })
+        .then(response => {
+            if (!response.ok) {
+                throw new Error("Failed to submit exam");
+            }
+            return response.json();
+        })
+        .then(result => {
+            alert(`Exam submitted! Your score: ${(result.totalScore * 100).toFixed(2)}%`);
+            displayUserHistory(result);
+        })
+        .catch(error => console.error("Error submitting exam:", error));
+    });
+
+    // Display user history and results
+    function displayUserHistory(data) {
+        const resultSection = document.getElementById("resultSection");
+        resultSection.innerHTML = `
+            <div class="mt-4 card">
+                <div class="card-body">
+                    <h5 class="card-title">Exam ID: ${data.examId}</h5>
+                    <p>Total Score percentage: ${(data.totalScore * 100).toFixed(2)}%</p>
+                    <p>Total Weighted Score Percentage: ${(data.totalWeightedSccore* 100).toFixed(2)}%</p>
+                    <p>Number of Correct Answers: ${data.numOfCorrectAnswers}</p>
+                    <p>Number of Wrong Answers: ${data.numOfWrongAnswers}</p>
+                    <p>Exam Status: ${data.examStatus}</p>
+                </div>
+            </div>
+        `;
+    }
+
+    // Load exams on page load
+    loadExams();
+</script>
+
+</body>
+</html>

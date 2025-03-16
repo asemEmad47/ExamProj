@@ -24,11 +24,11 @@ namespace ExamProj.Migrations
 
             modelBuilder.Entity("ExamProj.Models.ExamModel.UserHistory", b =>
                 {
-                    b.Property<int>("UserId")
+                    b.Property<int>("HistoryId")
+                        .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    b.Property<int>("HistoryId")
-                        .HasColumnType("int");
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("HistoryId"));
 
                     b.Property<int>("ExamId")
                         .HasColumnType("int");
@@ -37,18 +37,30 @@ namespace ExamProj.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<string>("ExamTitle")
+                        .IsRequired()
+                        .HasColumnType("varchar(50)");
+
                     b.Property<int>("NumOfCorrectAnswers")
                         .HasColumnType("int");
 
                     b.Property<int>("NumOfWrongAnswers")
                         .HasColumnType("int");
 
-                    b.Property<double>("TotalScore")
+                    b.Property<double>("TotalScorePercentage")
                         .HasColumnType("float");
 
-                    b.HasKey("UserId", "HistoryId");
+                    b.Property<double>("TotalScoreWeightPercentage")
+                        .HasColumnType("float");
 
-                    b.ToTable("UserHistory");
+                    b.Property<int>("UserId")
+                        .HasColumnType("int");
+
+                    b.HasKey("HistoryId");
+
+                    b.HasIndex("UserId");
+
+                    b.ToTable("histories");
                 });
 
             modelBuilder.Entity("WebApplication1.Models.ExamModel.Answer", b =>
@@ -81,6 +93,10 @@ namespace ExamProj.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("ExamId"));
 
+                    b.Property<string>("ExamTitle")
+                        .IsRequired()
+                        .HasColumnType("varchar(50)");
+
                     b.Property<double>("TotalScore")
                         .HasColumnType("float");
 
@@ -112,9 +128,6 @@ namespace ExamProj.Migrations
 
                     b.Property<double>("QuestionWeight")
                         .HasColumnType("float");
-
-                    b.Property<int>("RightAnswerId")
-                        .HasColumnType("int");
 
                     b.HasKey("QuestionId");
 
@@ -155,17 +168,10 @@ namespace ExamProj.Migrations
 
                     b.HasKey("UserId");
 
-                    b.ToTable("User", "Users");
+                    b.HasIndex("Email")
+                        .IsUnique();
 
-                    b.HasData(
-                        new
-                        {
-                            UserId = 1,
-                            Email = "asememad984@gmail.com",
-                            Password = "AQAAAAIAAYagAAAAEDlrL6MkkpZYVKNrABq3VrejgMfdxq9AMeR1iz55Dw4GwYdudj+jKaPpok/9G/Ld8g==",
-                            Role = "SuperAdmin",
-                            UserName = "Asem emad"
-                        });
+                    b.ToTable("User", "Users");
                 });
 
             modelBuilder.Entity("ExamProj.Models.ExamModel.UserHistory", b =>
@@ -181,11 +187,13 @@ namespace ExamProj.Migrations
 
             modelBuilder.Entity("WebApplication1.Models.ExamModel.Answer", b =>
                 {
-                    b.HasOne("WebApplication1.Models.ExamModel.Question", null)
+                    b.HasOne("WebApplication1.Models.ExamModel.Question", "Question")
                         .WithMany("Answers")
                         .HasForeignKey("QuestionId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
+
+                    b.Navigation("Question");
                 });
 
             modelBuilder.Entity("WebApplication1.Models.ExamModel.Exam", b =>
@@ -201,11 +209,13 @@ namespace ExamProj.Migrations
 
             modelBuilder.Entity("WebApplication1.Models.ExamModel.Question", b =>
                 {
-                    b.HasOne("WebApplication1.Models.ExamModel.Exam", null)
+                    b.HasOne("WebApplication1.Models.ExamModel.Exam", "Exam")
                         .WithMany("Questions")
                         .HasForeignKey("ExamId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
+
+                    b.Navigation("Exam");
                 });
 
             modelBuilder.Entity("WebApplication1.Models.ExamModel.Exam", b =>

@@ -6,9 +6,7 @@ using ExamProj.Services.ExamServices;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using System.IdentityModel.Tokens.Jwt;
-using System.Security.Claims;
 using WebApplication1.Context;
-using WebApplication1.Models.ExamModel;
 using WebApplication1.Models.UserModels;
 
 namespace ExamProj.Repos.AuthRepos
@@ -57,23 +55,34 @@ namespace ExamProj.Repos.AuthRepos
 
                 user.Password = passwordHasher.HashPassword(user, user.Password);
 
-                user.RefreshToken = _tokenCreator.CreateToken(user);
+                user.RefreshToken = _tokenCreator.CreateRefreshToken();
                 user.RefreshTokenExpiryTime = DateTime.UtcNow.AddDays(7);
-                _context.Add(user);
-                await _context.SaveChangesAsync();
-                return "";
+                try
+                {
+                    _context.Add(user);
+                    await _context.SaveChangesAsync();
+                    return "";
+                }
+                catch (Exception e)
+                {
+
+                    return e.Message;
+                }
+
             }
             return ValidatorResult.Item2;
         }
 
         private async Task<TokenResponse?> Login(string Email, string Password , Role role)
         {
-            var user = await _context.users.Where(u => u.Role == role && u.Role == role).FirstOrDefaultAsync();
+
+            var user = await _context.users.Where(u => u.Role == role && Email.Equals(u.Email)).FirstOrDefaultAsync();
 
             if (user == null) {
                 return null;
             }
             var passwordHasher = new PasswordHasher<User>();
+            Console.WriteLine("here2 "+ user==null +" "+user.UserName +" "+user.Role);
 
             var result = passwordHasher.VerifyHashedPassword(user, user.Password, Password);
 
@@ -82,14 +91,17 @@ namespace ExamProj.Repos.AuthRepos
                 string AccessToken = _tokenCreator.CreateToken(user);
                 string RefreshToken = _tokenCreator.CreateRefreshToken();
                 TokenResponse Response = new TokenResponse(AccessToken, RefreshToken);
+                user.RefreshToken = RefreshToken;
+                user.RefreshTokenExpiryTime = DateTime.UtcNow.AddDays(7);
+                await _context.SaveChangesAsync();
                 return Response;
             }
             return null;
         }
 
-        public async Task<TokenResponse> Refresh(string refreshToken)
+        public async Task<TokenResponse> Refresh(RefreshTokenObj refreshTokenObj)
         {
-            var user = _context.users.FirstOrDefault(u => u.RefreshToken == refreshToken);
+            var user = _context.users.FirstOrDefault(u => u.RefreshToken == refreshTokenObj.RefreshToken);
 
             if (user == null || user.RefreshTokenExpiryTime <= DateTime.UtcNow)
             {
@@ -97,7 +109,7 @@ namespace ExamProj.Repos.AuthRepos
             }
 
             var NewAccessToken = _tokenCreator.CreateToken(user);
-            var NewRefreshToken = _tokenCreator.CreateToken(user);
+            var NewRefreshToken = _tokenCreator.CreateRefreshToken();
             user.RefreshToken = NewRefreshToken;
             user.RefreshTokenExpiryTime = DateTime.UtcNow.AddDays(7); 
             await _context.SaveChangesAsync();

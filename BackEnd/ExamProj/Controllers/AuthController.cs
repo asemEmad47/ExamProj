@@ -1,6 +1,9 @@
-﻿using ExamProj.Repos.AuthRepos;
+﻿using ExamProj.Helpers;
+using ExamProj.Interfaces.AuthInterfaces;
+using ExamProj.Repos.AuthRepos;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using System.Diagnostics;
 using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using WebApplication1.Models.UserModels;
@@ -11,9 +14,9 @@ namespace ExamProj.Controllers
     [Route("api/[controller]")]
     public class AuthController : Controller
     {
-        private readonly AuthRepo _authRepo;
+        private readonly IAuthorizeRepo _authRepo;
 
-        public AuthController(AuthRepo authRepo) {
+        public AuthController(IAuthorizeRepo authRepo) {
             _authRepo = authRepo;
         }
 
@@ -45,9 +48,9 @@ namespace ExamProj.Controllers
 
 
         [HttpPost("AdminLogin")]
-        public async Task<IActionResult> AdminLogin(string Email, string Password)
+        public async Task<IActionResult> AdminLogin([FromBody] LoginObj loginObj)
         {
-            var Result = await _authRepo.AdminLogin(Email, Password);
+            var Result = await _authRepo.AdminLogin(loginObj.Email, loginObj.Password);
             if (Result == null)
             {
                 return NotFound();
@@ -56,9 +59,10 @@ namespace ExamProj.Controllers
         }
 
         [HttpPost("StudentLogin")]
-        public async Task<IActionResult> StudentLogin(string Email, string Password)
+        public async Task<IActionResult> StudentLogin([FromBody] LoginObj loginObj)
         {
-            var Result = await _authRepo.StudentLogin(Email, Password);
+            Console.WriteLine("here");
+            var Result = await _authRepo.StudentLogin(loginObj.Email, loginObj.Password);
 
             if (Result == null )
             {
@@ -67,9 +71,9 @@ namespace ExamProj.Controllers
             return Ok(Result);
         }
         [HttpPost("Refresh")]
-        public async Task<IActionResult> Refresh(string ExpiredToken) {
+        public async Task<IActionResult> Refresh(RefreshTokenObj refreshTokenObj) {
 
-            var Result = await _authRepo.Refresh(ExpiredToken);
+            var Result = await _authRepo.Refresh(refreshTokenObj);
 
             if (Result == null)
             {

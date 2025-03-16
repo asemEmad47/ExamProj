@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Update Exam</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/css/bootstrap.min.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+            <span class="navbar-brand mb-0 h1">Admin Panel</span>
+            <div class="collapse navbar-collapse">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="add-exam.html">Add Exam</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="add-admin.html">Add Admin</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="add-student.html">Add Student</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="manage-exams.html">Manage Exams</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-4">
+        <h2>Update Exam</h2>
+        <form id="updateForm">
+            <div class="mb-3">
+                <label for="examTitle" class="form-label">Exam Title</label>
+                <input type="text" class="form-control" id="examTitle">
+            </div>
+            <div id="questionsContainer"></div>
+            <button type="submit" class="btn btn-primary">Save Changes</button>
+        </form>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="../auth.js"></script> <!-- Include the auth.js file -->
+    <script>
+        let QIds = [];
+
+        $(document).ready(function () {
+            let exam = JSON.parse(localStorage.getItem('examData'));
+            console.log(exam);
+
+            if (exam) {
+                $('#examTitle').val(exam.examTitle);
+                loadQuestions(exam.questions);
+            }
+
+            $('#updateForm').on('submit', async function (event) {
+                event.preventDefault();
+                const updatedExam = {
+                    ExamId: exam.examId,
+                    ExamTitle: $('#examTitle').val(),
+                    Questions: getUpdatedQuestions(),
+                };
+
+                try {
+                    await apiCall(`https://localhost:7216/api/Exam/UpdateExam/${exam.examId}`, {
+                        method: 'PUT',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify(updatedExam)
+                    });
+
+                    alert('Exam updated successfully');
+                    window.location.href = 'manage-exams.html';
+                } catch (error) {
+                    console.log(JSON.stringify(updatedExam));
+                    alert('Error updating exam');
+                    console.error("Error:", error);
+                }
+            });
+        });
+
+        function loadQuestions(questions) {
+            let questionsHtml = '';
+            questions.forEach((question, index) => {
+                QIds.push(question.questionId);
+                questionsHtml += `
+                    <div class="question-block mb-4">
+                        <label class="form-label">Question ${index + 1} Title</label>
+                        <input type="text" class="form-control mb-2" id="questionTitle${index}" value="${question.questionTitle}">
+
+                        <label class="form-label">Weight</label>
+                        <input type="number" class="form-control mb-2" id="questionWeight${index}" value="${question.questionWeight}">
+
+                        <label class="form-label">Right Answer</label>
+                        <input type="text" class="form-control mb-2 answer-field" id="answer${index}_0" data-answer-id="${question.answers[0].answerId}" value="${question.answers[0].answerTxt}">
+
+                        <label class="form-label">Wrong Answers</label>
+                `;
+
+                for (let i = 1; i < question.answers.length; i++) {
+                    questionsHtml += `
+                        <input type="text" class="form-control mb-2 answer-field" id="answer${index}_${i}" data-answer-id="${question.answers[i].answerId}" value="${question.answers[i].answerTxt}">
+                    `;
+                }
+
+                questionsHtml += `</div>`;
+            });
+
+            $('#questionsContainer').html(questionsHtml);
+        }
+
+        function getUpdatedQuestions() {
+            const questions = [];
+            $('.question-block').each(function (index) {
+                const QuestionId = QIds[index];
+                const QuestionTitle = $(`#questionTitle${index}`).val();
+                const QuestionWeight = $(`#questionWeight${index}`).val();
+                const Answers = [];
+
+                $(this).find('.answer-field').each(function () {
+                    Answers.push({
+                        AnswerId: $(this).data('answer-id'),
+                        AnswerTxt: $(this).val(),
+                    });
+                });
+
+                questions.push({ QuestionId, QuestionTitle, QuestionWeight, Answers });
+            });
+            return questions;
+        }
+    </script>
+</body>
+</html>

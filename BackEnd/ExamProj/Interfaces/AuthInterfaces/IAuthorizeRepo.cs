@@ -8,5 +8,6 @@ namespace ExamProj.Interfaces.AuthInterfaces
         Task<TokenResponse?> AdminLogin(string Email , string Password);
         Task<string> AdminRegestration(User user);
         Task<string> StudntRegestration(User user);
+        Task<TokenResponse> Refresh(RefreshTokenObj refreshTokenObj);
     }
 }

@@ -3,20 +3,28 @@
   "WorkspaceRootPath": "D:\\DPartion\\AliShahinTask\\ExamProj\\BackEnd\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{B59C9913-04F1-4F58-8CEB-3EBCEFC073CE}|ExamProj\\ExamProj.csproj|d:\\dpartion\\alishahintask\\examproj\\backend\\examproj\\models\\usermodels\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B59C9913-04F1-4F58-8CEB-3EBCEFC073CE}|ExamProj\\ExamProj.csproj|solutionrelative:examproj\\models\\usermodels\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{B59C9913-04F1-4F58-8CEB-3EBCEFC073CE}|ExamProj\\ExamProj.csproj|d:\\dpartion\\alishahintask\\examproj\\backend\\examproj\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B59C9913-04F1-4F58-8CEB-3EBCEFC073CE}|ExamProj\\ExamProj.csproj|solutionrelative:examproj\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{B59C9913-04F1-4F58-8CEB-3EBCEFC073CE}|ExamProj\\ExamProj.csproj|d:\\dpartion\\alishahintask\\examproj\\backend\\examproj\\context\\context.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B59C9913-04F1-4F58-8CEB-3EBCEFC073CE}|ExamProj\\ExamProj.csproj|solutionrelative:examproj\\context\\context.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{B59C9913-04F1-4F58-8CEB-3EBCEFC073CE}|ExamProj\\ExamProj.csproj|d:\\dpartion\\alishahintask\\examproj\\backend\\examproj\\helpers\\loginobj.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B59C9913-04F1-4F58-8CEB-3EBCEFC073CE}|ExamProj\\ExamProj.csproj|solutionrelative:examproj\\helpers\\loginobj.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{B59C9913-04F1-4F58-8CEB-3EBCEFC073CE}|ExamProj\\ExamProj.csproj|d:\\dpartion\\alishahintask\\examproj\\backend\\examproj\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{B59C9913-04F1-4F58-8CEB-3EBCEFC073CE}|ExamProj\\ExamProj.csproj|solutionrelative:examproj\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+      "AbsoluteMoniker": "D:0:0:{B59C9913-04F1-4F58-8CEB-3EBCEFC073CE}|ExamProj\\ExamProj.csproj|d:\\dpartion\\alishahintask\\examproj\\backend\\examproj\\helpers\\refreshtokenobj.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B59C9913-04F1-4F58-8CEB-3EBCEFC073CE}|ExamProj\\ExamProj.csproj|solutionrelative:examproj\\helpers\\refreshtokenobj.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{B59C9913-04F1-4F58-8CEB-3EBCEFC073CE}|ExamProj\\ExamProj.csproj|d:\\dpartion\\alishahintask\\examproj\\backend\\examproj\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B59C9913-04F1-4F58-8CEB-3EBCEFC073CE}|ExamProj\\ExamProj.csproj|solutionrelative:examproj\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{B59C9913-04F1-4F58-8CEB-3EBCEFC073CE}|ExamProj\\ExamProj.csproj|d:\\dpartion\\alishahintask\\examproj\\backend\\examproj\\repos\\authrepos\\authrepo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B59C9913-04F1-4F58-8CEB-3EBCEFC073CE}|ExamProj\\ExamProj.csproj|solutionrelative:examproj\\repos\\authrepos\\authrepo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B59C9913-04F1-4F58-8CEB-3EBCEFC073CE}|ExamProj\\ExamProj.csproj|d:\\dpartion\\alishahintask\\examproj\\backend\\examproj\\models\\exammodel\\userhistory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B59C9913-04F1-4F58-8CEB-3EBCEFC073CE}|ExamProj\\ExamProj.csproj|solutionrelative:examproj\\models\\exammodel\\userhistory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B59C9913-04F1-4F58-8CEB-3EBCEFC073CE}|ExamProj\\ExamProj.csproj|d:\\dpartion\\alishahintask\\examproj\\backend\\examproj\\models\\exammodel\\exam.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B59C9913-04F1-4F58-8CEB-3EBCEFC073CE}|ExamProj\\ExamProj.csproj|solutionrelative:examproj\\models\\exammodel\\exam.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -31,54 +39,75 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "User.cs",
-              "DocumentMoniker": "D:\\DPartion\\AliShahinTask\\ExamProj\\BackEnd\\ExamProj\\Models\\UserModels\\User.cs",
-              "RelativeDocumentMoniker": "ExamProj\\Models\\UserModels\\User.cs",
-              "ToolTip": "D:\\DPartion\\AliShahinTask\\ExamProj\\BackEnd\\ExamProj\\Models\\UserModels\\User.cs",
-              "RelativeToolTip": "ExamProj\\Models\\UserModels\\User.cs",
-              "ViewState": "AgIAAA0AAAAAAAAAAAAqwBsAAAAYAAAAAAAAAA==",
+              "Title": "AuthController.cs",
+              "DocumentMoniker": "D:\\DPartion\\AliShahinTask\\ExamProj\\BackEnd\\ExamProj\\Controllers\\AuthController.cs",
+              "RelativeDocumentMoniker": "ExamProj\\Controllers\\AuthController.cs",
+              "ToolTip": "D:\\DPartion\\AliShahinTask\\ExamProj\\BackEnd\\ExamProj\\Controllers\\AuthController.cs",
+              "RelativeToolTip": "ExamProj\\Controllers\\AuthController.cs",
+              "ViewState": "AgIAAEMAAAAAAAAAAAAIwFMAAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-14T14:45:58.849Z",
+              "WhenOpened": "2025-03-16T02:18:56.551Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "Context.cs",
-              "DocumentMoniker": "D:\\DPartion\\AliShahinTask\\ExamProj\\BackEnd\\ExamProj\\Context\\Context.cs",
-              "RelativeDocumentMoniker": "ExamProj\\Context\\Context.cs",
-              "ToolTip": "D:\\DPartion\\AliShahinTask\\ExamProj\\BackEnd\\ExamProj\\Context\\Context.cs",
-              "RelativeToolTip": "ExamProj\\Context\\Context.cs",
-              "ViewState": "AgIAAB4AAAAAAAAAAAAgwCkAAAAAAAAAAAAAAA==",
+              "Title": "LoginObj.cs",
+              "DocumentMoniker": "D:\\DPartion\\AliShahinTask\\ExamProj\\BackEnd\\ExamProj\\Helpers\\LoginObj.cs",
+              "RelativeDocumentMoniker": "ExamProj\\Helpers\\LoginObj.cs",
+              "ToolTip": "D:\\DPartion\\AliShahinTask\\ExamProj\\BackEnd\\ExamProj\\Helpers\\LoginObj.cs",
+              "RelativeToolTip": "ExamProj\\Helpers\\LoginObj.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-14T14:42:02.563Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "Program.cs",
-              "DocumentMoniker": "D:\\DPartion\\AliShahinTask\\ExamProj\\BackEnd\\ExamProj\\Program.cs",
-              "RelativeDocumentMoniker": "ExamProj\\Program.cs",
-              "ToolTip": "D:\\DPartion\\AliShahinTask\\ExamProj\\BackEnd\\ExamProj\\Program.cs",
-              "RelativeToolTip": "ExamProj\\Program.cs",
-              "ViewState": "AgIAACoAAAAAAAAAAAAAACIAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-14T14:16:15.929Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-16T02:17:51.097Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "appsettings.json",
-              "DocumentMoniker": "D:\\DPartion\\AliShahinTask\\ExamProj\\BackEnd\\ExamProj\\appsettings.json",
-              "RelativeDocumentMoniker": "ExamProj\\appsettings.json",
-              "ToolTip": "D:\\DPartion\\AliShahinTask\\ExamProj\\BackEnd\\ExamProj\\appsettings.json",
-              "RelativeToolTip": "ExamProj\\appsettings.json",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2025-03-14T14:16:07.112Z",
-              "EditorCaption": ""
+              "Title": "RefreshTokenObj.cs",
+              "DocumentMoniker": "D:\\DPartion\\AliShahinTask\\ExamProj\\BackEnd\\ExamProj\\Helpers\\RefreshTokenObj.cs",
+              "RelativeDocumentMoniker": "ExamProj\\Helpers\\RefreshTokenObj.cs",
+              "ToolTip": "D:\\DPartion\\AliShahinTask\\ExamProj\\BackEnd\\ExamProj\\Helpers\\RefreshTokenObj.cs",
+              "RelativeToolTip": "ExamProj\\Helpers\\RefreshTokenObj.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-16T02:17:16.781Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "AuthRepo.cs",
+              "DocumentMoniker": "D:\\DPartion\\AliShahinTask\\ExamProj\\BackEnd\\ExamProj\\Repos\\AuthRepos\\AuthRepo.cs",
+              "RelativeDocumentMoniker": "ExamProj\\Repos\\AuthRepos\\AuthRepo.cs",
+              "ToolTip": "D:\\DPartion\\AliShahinTask\\ExamProj\\BackEnd\\ExamProj\\Repos\\AuthRepos\\AuthRepo.cs",
+              "RelativeToolTip": "ExamProj\\Repos\\AuthRepos\\AuthRepo.cs",
+              "ViewState": "AgIAAGIAAAAAAAAAAAAcwGcAAABoAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-16T01:16:36.948Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "UserHistory.cs",
+              "DocumentMoniker": "D:\\DPartion\\AliShahinTask\\ExamProj\\BackEnd\\ExamProj\\Models\\ExamModel\\UserHistory.cs",
+              "RelativeDocumentMoniker": "ExamProj\\Models\\ExamModel\\UserHistory.cs",
+              "ToolTip": "D:\\DPartion\\AliShahinTask\\ExamProj\\BackEnd\\ExamProj\\Models\\ExamModel\\UserHistory.cs",
+              "RelativeToolTip": "ExamProj\\Models\\ExamModel\\UserHistory.cs",
+              "ViewState": "AgIAAAcAAAAAAAAAAAAAABIAAAAtAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-16T00:39:50.369Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Exam.cs",
+              "DocumentMoniker": "D:\\DPartion\\AliShahinTask\\ExamProj\\BackEnd\\ExamProj\\Models\\ExamModel\\Exam.cs",
+              "RelativeDocumentMoniker": "ExamProj\\Models\\ExamModel\\Exam.cs",
+              "ToolTip": "D:\\DPartion\\AliShahinTask\\ExamProj\\BackEnd\\ExamProj\\Models\\ExamModel\\Exam.cs",
+              "RelativeToolTip": "ExamProj\\Models\\ExamModel\\Exam.cs",
+              "ViewState": "AgIAAAUAAAAAAAAAAAAUwAwAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-15T05:16:54.93Z"
             }
           ]
         }

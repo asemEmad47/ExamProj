@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Manage Exams</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/css/bootstrap.min.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+            <span class="navbar-brand mb-0 h1">Admin Panel</span>
+            <div class="collapse navbar-collapse">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="add-exam.html">Add Exam</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="add-admin.html">Add Admin</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="add-student.html">Add Student</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="manage-exams.html">Manage Exams</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Manage Exams Section -->
+    <div class="container mt-4">
+        <h2>Manage Exams</h2>
+        <div id="examsContainer"></div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="../auth.js"></script> <!-- Include the auth.js file -->
+    <script>
+        // Load Exams on Page Load
+        $(document).ready(function () {
+            loadExams();
+        });
+
+        // Load Exams from API
+        async function loadExams() {
+            try {
+                const response = await apiCall("https://localhost:7216/api/Exam/GetAllExams", {
+                    method: "GET"
+                });
+
+                let examsHtml = '';
+                response.forEach((exam, index) => {
+                    examsHtml += `
+                    <div class="card mb-3 p-3">
+                        <h5>${index + 1}. ${exam.examTitle}</h5>
+                        <div class="d-flex justify-content-start">
+                            <button class="btn btn-warning btn-sm me-2" onclick="updateExam(${exam.examId})">Update</button>
+                            <button class="btn btn-danger btn-sm" onclick="deleteExam(${exam.examId})">Delete</button>
+                        </div>
+                    </div>`;
+                });
+                console.log(response);
+                $('#examsContainer').html(examsHtml);
+            } catch (error) {
+                alert("Error loading exams.");
+                console.error("Error:", error);
+            }
+        }
+
+        // Delete Exam
+        async function deleteExam(examId) {
+            if (confirm("Are you sure you want to delete this exam?")) {
+                try {
+                    await apiCall(`https://localhost:7216/api/Exam/DeleteExam/${examId}`, {
+                        method: "DELETE"
+                    });
+                    alert("Exam deleted successfully!");
+                    loadExams();
+                } catch (error) {
+                    alert("Error deleting exam.");
+                    console.error("Error:", error);
+                }
+            }
+        }
+
+        // Update Exam
+        async function updateExam(examId) {
+            try {
+                const exam = await apiCall(`https://localhost:7216/api/Exam/GetExam/${examId}`, {
+                    method: "GET"
+                });
+
+                // Store exam data in localStorage
+                localStorage.setItem('examData', JSON.stringify(exam));
+                // Redirect to the update page with the examId
+                window.location.href = `update-exam.html?id=${examId}`;
+            } catch (error) {
+                alert("Error loading exam data.");
+                console.error("Error:", error);
+            }
+        }
+    </script>
+</body>
+</html>

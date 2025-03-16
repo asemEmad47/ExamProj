@@ -1,4 +1,5 @@
 ﻿using ExamProj.Interfaces.ExamInterfaces;
+using ExamProj.Models.ExamModel;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using WebApplication1.Models.ExamModel;
@@ -26,9 +27,20 @@ namespace ExamProj.Controllers.ExamPackage
             }
             return BadRequest(result.Item2);
         }
+        [HttpGet("GetAllExams")]
+        public async Task<IActionResult> GetAllExams()
+        {
+            var AllExams = await _examRepo.GetAll();
 
+            if (AllExams == null)
+            {
+                return NotFound("There is no exams in the system yet");
+            }
 
-        [HttpPut("UpdateExam")]
+            return Ok(AllExams);
+        }
+
+        [HttpPut("UpdateExam/{ExamId}")]
         [Authorize(Roles = "SuperAdmin")]
         public async Task<IActionResult> UpdateExam([FromBody] Exam exam , int ExamId)
         {
@@ -40,7 +52,7 @@ namespace ExamProj.Controllers.ExamPackage
             return BadRequest(result.Item2);
         }
 
-        [HttpPut("GetExam")]
+        [HttpGet("GetExam/{ExamId}")]
         [Authorize]
 
         public async Task<IActionResult> GetExam(int ExamId)
@@ -53,7 +65,7 @@ namespace ExamProj.Controllers.ExamPackage
             return BadRequest(result.Item2);
         }       
         
-        [HttpDelete("DeleteExam")]
+        [HttpDelete("DeleteExam/{ExamId}")]
         [Authorize(Roles = "SuperAdmin")]
         public async Task<IActionResult> DeleteExam(int ExamId)
         {
@@ -63,6 +75,41 @@ namespace ExamProj.Controllers.ExamPackage
                 return NotFound("There is no exam with this ID!");
             }
             return Ok(true);
+        }
+
+        [HttpPost("CorrectUserAnswers")]
+        [Authorize]
+        public async Task<IActionResult> CorrectUserAnswers(Exam exam)
+        {
+            var UserHistory = await _examRepo.CorrectUserAnswers(exam);
+            if(UserHistory == null)
+            {
+                return BadRequest("Unexpicted error happend");
+            }
+            var result = new
+            {
+                ExamId = UserHistory.ExamId,
+                TotalScore = UserHistory.TotalScorePercentage,
+                TotalWeightedSccore = UserHistory.TotalScoreWeightPercentage,
+                NumOfCorrectAnswers = UserHistory.NumOfCorrectAnswers,
+                NumOfWrongAnswers = UserHistory.NumOfWrongAnswers,
+                ExamStatus = UserHistory.ExamStatus.ToString()  ,
+                ExamTitle = UserHistory.ExamTitle,
+            };
+            return Ok(result);
+        }
+
+        [HttpGet("GetUserExams")]
+        [Authorize]
+        public async Task<IActionResult> GetExams()
+        {
+            var UserExams = await _examRepo.GetUserExamsHistory();
+            if (UserExams == null)
+            {
+                return BadRequest("This user doesn't had an exam yet!");
+            }
+
+            return Ok(UserExams);
         }
     }
 }

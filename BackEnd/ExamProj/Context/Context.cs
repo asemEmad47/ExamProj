@@ -1,22 +1,24 @@
 ﻿using ExamProj.Models.ExamModel;
+using ExamProj.Services;
 using Microsoft.EntityFrameworkCore;
 using WebApplication1.Models.ExamModel;
 using WebApplication1.Models.UserModels;
 
 namespace WebApplication1.Context
 {
-    public class Context:DbContext
+    public class Context : DbContext
     {
         public DbSet<User> users { get; set; }
-
         public DbSet<Exam> exams { get; set; }
         public DbSet<Question> questions { get; set; }
         public DbSet<Answer> answers { get; set; }
+        public DbSet<UserHistory> histories { get; set; }
+
 
         public Context(DbContextOptions<Context> options) : base(options)
         {
-
         }
+
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
@@ -30,25 +32,21 @@ namespace WebApplication1.Context
                 .HasConversion<string>();
 
             modelBuilder.Entity<UserHistory>()
-                .HasKey(uh => new { uh.UserId, uh.HistoryId});
+                .HasKey(uh => new { uh.HistoryId });
 
+            modelBuilder.Entity<User>()
+                .HasIndex(u => u.Email)
+                .IsUnique();
+
+            modelBuilder.Entity<Exam>()
+                .HasMany(e => e.Questions)
+                .WithOne(q => q.Exam)
+                .OnDelete(DeleteBehavior.Cascade);  
 
             modelBuilder.Entity<Question>()
                 .HasMany(q => q.Answers)
-                .WithOne()
-                .HasForeignKey(a => a.QuestionId)
+                .WithOne(a => a.Question)
                 .OnDelete(DeleteBehavior.Cascade);
-
-            var SuperAdmin = new User()
-            {
-                UserId = 1,
-                UserName = "Asem emad",
-                Password = "AQAAAAIAAYagAAAAEDlrL6MkkpZYVKNrABq3VrejgMfdxq9AMeR1iz55Dw4GwYdudj+jKaPpok/9G/Ld8g==",
-                Email = "asememad984@gmail.com",
-                Role = Role.SuperAdmin
-            };
-
-            modelBuilder.Entity<User>().HasData(SuperAdmin);
         }
     }
 }

@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace ExamProj.Migrations
 {
     /// <inheritdoc />
-    public partial class IntitialCreate : Migration
+    public partial class InitialCreate : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -23,9 +23,9 @@ namespace ExamProj.Migrations
                         .Annotation("SqlServer:Identity", "1, 1"),
                     Email = table.Column<string>(type: "varchar(50)", nullable: false),
                     UserName = table.Column<string>(type: "varchar(25)", nullable: false),
-                    Password = table.Column<string>(type: "varchar(25)", nullable: false),
-                    RefreshToken = table.Column<string>(type: "varchar(255)", nullable: false),
-                    RefreshTokenExpiryTime = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    Password = table.Column<string>(type: "varchar(90)", nullable: false),
+                    RefreshToken = table.Column<string>(type: "varchar(255)", nullable: true),
+                    RefreshTokenExpiryTime = table.Column<DateTime>(type: "datetime2", nullable: true),
                     Role = table.Column<string>(type: "nvarchar(max)", nullable: false)
                 },
                 constraints: table =>
@@ -40,14 +40,15 @@ namespace ExamProj.Migrations
                     ExamId = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     TotalScore = table.Column<double>(type: "float", nullable: false),
-                    Addedby = table.Column<int>(name: "Added by", type: "int", nullable: false)
+                    AddedBy = table.Column<int>(type: "int", nullable: false),
+                    ExamTitle = table.Column<string>(type: "varchar(50)", nullable: false)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_exams", x => x.ExamId);
                     table.ForeignKey(
-                        name: "FK_exams_User_Added by",
-                        column: x => x.Addedby,
+                        name: "FK_exams_User_AddedBy",
+                        column: x => x.AddedBy,
                         principalSchema: "Users",
                         principalTable: "User",
                         principalColumn: "UserId",
@@ -85,7 +86,7 @@ namespace ExamProj.Migrations
                     QuestionId = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     ExamId = table.Column<int>(type: "int", nullable: false),
-                    RightAnswerId = table.Column<int>(type: "int", nullable: false),
+                    RightAnswerId = table.Column<int>(type: "int", nullable: true),
                     QuestionWeight = table.Column<double>(type: "float", nullable: false),
                     QuestionTitle = table.Column<string>(type: "varchar(255)", nullable: false)
                 },
@@ -126,14 +127,21 @@ namespace ExamProj.Migrations
                 column: "QuestionId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_exams_Added by",
+                name: "IX_exams_AddedBy",
                 table: "exams",
-                column: "Added by");
+                column: "AddedBy");
 
             migrationBuilder.CreateIndex(
                 name: "IX_questions_ExamId",
                 table: "questions",
                 column: "ExamId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_User_Email",
+                schema: "Users",
+                table: "User",
+                column: "Email",
+                unique: true);
         }
 
         /// <inheritdoc />

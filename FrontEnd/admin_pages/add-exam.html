@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Add Exam</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/css/bootstrap.min.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+            <span class="navbar-brand mb-0 h1">Admin Panel</span>
+            <div class="collapse navbar-collapse">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="add-exam.html">Add Exam</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="add-admin.html">Add Admin</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="add-student.html">Add Student</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="manage-exams.html">Manage Exams</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Add Exam Section -->
+    <div class="container mt-4">
+        <h2>Add Exam</h2>
+        <input type="text" id="examTitle" class="form-control mb-3" placeholder="Exam Title">
+
+        <!-- Question Container -->
+        <div id="questionsContainer"></div>
+
+        <!-- Buttons -->
+        <div class="mb-3">
+            <button id="addQuestion" class="btn btn-success">+ Add Question</button>
+            <button id="saveExam" class="btn btn-primary">Save Exam</button>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="../auth.js"></script> <!-- Include the auth.js file -->
+    <script>
+        $(document).ready(function () {
+            let questionCount = 0;
+
+            // Add Question Button Click
+            $("#addQuestion").click(function () {
+                questionCount++;
+                const questionHtml = `
+                    <div class="card mb-3 p-3" id="question-${questionCount}">
+                        <h5>Question ${questionCount}</h5>
+                        <input type="text" class="form-control mb-2" placeholder="Question Title" name="questionTitle">
+                        <input type="number" class="form-control mb-2" placeholder="Weight" name="questionWeight">
+
+                        <!-- Right Answer Text Input (First answer will be Right Answer) -->
+                        <input type="text" class="form-control mb-2" placeholder="Right Answer" name="rightAnswer-${questionCount}-1">
+
+                        <!-- Wrong Answers Text Input -->
+                        <div id="wrongAnswers-${questionCount}">
+                            <input type="text" class="form-control mb-2" placeholder="Wrong Answer 1" name="wrongAnswer-${questionCount}-1">
+                        </div>
+
+                        <!-- Add More Wrong Answers Button -->
+                        <button class="btn btn-warning btn-sm mb-2" onclick="addWrongAnswer(${questionCount})">+ Add Wrong Answer</button>
+                    </div>`;
+                $("#questionsContainer").append(questionHtml);
+            });
+
+            // Add Wrong Answer Function
+            window.addWrongAnswer = function (questionId) {
+                const answerIndex = $(`#wrongAnswers-${questionId} input`).length + 1;
+                const wrongAnswerHtml = `
+                    <input type="text" class="form-control mb-2" placeholder="Wrong Answer ${answerIndex}" name="wrongAnswer-${questionId}-${answerIndex}">`;
+                $(`#wrongAnswers-${questionId}`).append(wrongAnswerHtml);
+            };
+
+            $("#saveExam").click(async function () {
+                const examTitle = $("#examTitle").val();
+                const questions = [];
+
+                $("#questionsContainer .card").each(function () {
+                    const title = $(this).find('input[name="questionTitle"]').val();
+                    const weight = parseFloat($(this).find('input[name="questionWeight"]').val());
+                    const answers = [];
+
+                    // Collect Right Answer (first answer input)
+                    const rightAnswerText = $(this).find(`input[name^="rightAnswer-"]`).val();
+                    answers.push({ AnswerTxt: rightAnswerText });
+
+                    // Collect all Wrong Answers
+                    $(this).find(`input[name^="wrongAnswer-"]`).each(function () {
+                        const wrongAnswerText = $(this).val();
+                        answers.push({ AnswerTxt: wrongAnswerText });
+                    });
+
+                    // Construct the Question object, where the first answer will be considered as the correct answer
+                    questions.push({
+                        QuestionTitle: title,
+                        QuestionWeight: weight,
+                        Answers: answers  // All answers are stored in the Answers array
+                    });
+                });
+
+                const examData = {
+                    ExamTitle: examTitle,
+                    Questions: questions
+                };
+
+                console.log("Exam Data:", examData);
+
+                // Send to API
+                try {
+                    await apiCall("https://localhost:7216/api/Exam/AddNewExam", {
+                        method: "POST",
+                        headers: { "Content-Type": "application/json" },
+                        body: JSON.stringify(examData)
+                    });
+                    alert("Exam saved successfully!");
+                } catch (error) {
+                    console.error("Error saving exam:", error);
+                    alert("Error saving exam.");
+                }
+            });
+        });
+    </script>
+</body>
+</html>

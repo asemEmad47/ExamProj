@@ -19,6 +19,9 @@ namespace ExamProj.Services.AuthServices
         public string CreateToken(User user)
         {
             var TokenHandler = new JwtSecurityTokenHandler();
+
+            var expirationTime = DateTime.UtcNow.AddMinutes(token.ExpirationDurationInMinutes);
+
             var TokenDescriptor = new SecurityTokenDescriptor
             {
                 Issuer = token.Issuer,
@@ -26,14 +29,17 @@ namespace ExamProj.Services.AuthServices
                 SigningCredentials = new SigningCredentials(new SymmetricSecurityKey(Encoding.UTF8.GetBytes(token.Key)), SecurityAlgorithms.HmacSha256),
                 Subject = new ClaimsIdentity(
                 [
-                    new(ClaimTypes.NameIdentifier , user.UserId.ToString()),
-                    new(ClaimTypes.Role , user.Role.ToString())
-                ])
+                    new Claim(ClaimTypes.NameIdentifier, user.UserId.ToString()),
+            new Claim(ClaimTypes.Role, user.Role.ToString())
+                ]),
+                Expires = expirationTime 
             };
+
             var SecurityToken = TokenHandler.CreateToken(TokenDescriptor);
             var AccessToken = TokenHandler.WriteToken(SecurityToken);
             return AccessToken;
         }
+
         public string CreateRefreshToken()
         {
             var randomNumber = new byte[32];

@@ -20,22 +20,23 @@ namespace ExamProj.Services.ExamServices
                 }
                 else if (question.Answers == null)
                 {
-                    return (false, "answers are required");
-                }
+                    return (false, "Answers are required");
+                }      
 
-
-                foreach (var wrongAnswer in question.Answers)
+                
+                foreach (var Answer in question.Answers)
                 {
-                    if(wrongAnswer.AnswerTxt.Length > 255)
+                    if (Answer.AnswerTxt.Length > 255)
                     {
-                        return (false, "Question title should not exceed 255 character");
-                    }      
-                    
-                    else if(wrongAnswer.AnswerTxt.Length ==0 || wrongAnswer.AnswerTxt ==null)
+                        return (false, "Answer text should not exceed 255 character");
+                    }
+
+                    else if (Answer.AnswerTxt.Length == 0 || Answer.AnswerTxt == null)
                     {
-                        return (false, "Wrong answer text is required");
+                        return (false, "Answer text is required");
                     }
                 }
+
             }
             return (true, "");
         }

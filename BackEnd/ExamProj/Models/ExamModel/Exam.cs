@@ -9,6 +9,9 @@ namespace WebApplication1.Models.ExamModel
     {
         [Key]
         public int ExamId { get; set; }
+
+        [Column(TypeName = "varchar(50)")]
+        public string ExamTitle { get; set; }
         public double TotalScore { get; set; }
 
         [Required]
@@ -18,7 +21,6 @@ namespace WebApplication1.Models.ExamModel
         [Required]
         public List<Question> Questions { get; set; }
 
-        [JsonIgnore]
-        public User user { get; set; }
+        public User? user { get; set; }
     }
 }

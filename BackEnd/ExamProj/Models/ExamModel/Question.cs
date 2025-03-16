@@ -1,5 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.Text.Json.Serialization;
 
 namespace WebApplication1.Models.ExamModel
 {
@@ -11,9 +12,6 @@ namespace WebApplication1.Models.ExamModel
         public int ExamId { get; set; }
 
         [Required]
-        public int RightAnswerId { get; set; }  
-
-        [Required]
         public double QuestionWeight { get; set; }
 
         [Required]
@@ -22,5 +20,8 @@ namespace WebApplication1.Models.ExamModel
 
         [Required]
         public List<Answer> Answers { get; set; }
+
+        [JsonIgnore]
+        public Exam? Exam { get; set; }
     }
 }
